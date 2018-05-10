@@ -51,7 +51,7 @@ var userGuess = null;
  *
  */ 
 var letterToBeGuessed = keyBoardLetters[Math.floor(Math.random() * keyBoardLetters.length)];
-console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + letterToBeGuessed);
+//console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + letterToBeGuessed);
 
 /**
  *  Start listening for user events
@@ -110,11 +110,11 @@ document.onkeyup = function(event) {
 \*============================================================================*/
 	if (letterToBeGuessed == userGuess) {
 		wins++;
-		console.log("You won!");
+		//console.log("You won!");
 		guessesLeft = 9;
 		guessesSoFar = [];
 		letterToBeGuessed = keyBoardLetters[Math.floor(Math.random() * keyBoardLetters.length)];
-		console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + letterToBeGuessed);
+		//console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + letterToBeGuessed);
 	}
 
 	// if guessesLeft gets to 0 then record it as a loss
@@ -132,8 +132,10 @@ document.onkeyup = function(event) {
     }
 
 	// Displaying progress to HTML
-	var html = "<h1>The Psychic Game</h1>" + "<p><h4>Guess what letter I\'m thinking of</h4></p>" + "<p><h4>Wins: " + wins + "</h4></p>" + "<p><h4>Losses: " + losses + "</h4></p>" + "<p><h4>Guesses Left: " + guessesLeft + "</h4></p>" + "<p><h4>Your guesses so far: " + guessesSoFar + "</h4></p>";
-	// place html into the game ID
-	document.querySelector('div[id="psych-game"]').innerHTML = html;
+	var html = "<h1>The Psychic Game</h1>" + "<p>Guess what letter I\'m thinking of</p>" + "<p>Wins: " + wins + "</p>" + "<p>Losses: " + losses + "</p>" + "<p>Guesses Left: " + guessesLeft + "</p>" + "<p>Your guesses so far: " + guessesSoFar + "</p>";
+    
+
+    // Add basic html
+	document.querySelector('.psych-game').innerHTML = html;
 
 }
